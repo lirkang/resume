@@ -1,4 +1,6 @@
 <script setup lang="ts" name="Subplate">
+import MarkdownString from '@/components/MarkdownString.vue';
+
 interface Props {
   title?: string;
   subTitle?: string | Array<string>;
@@ -25,20 +27,21 @@ const { title, dateString, description, location, subTitle, link, linkLabel = 'é
     <div class="flex justify-between" v-if="subTitle || dateString">
       <span class="text-gray-600 leading-8" v-if="subTitle">
         <template v-if="Array.isArray(subTitle)">
-          <p v-for="title of subTitle" :key="title">{{ title }}</p>
+          <MarkdownString v-for="title of subTitle" :key="title" :source="title" />
         </template>
 
         <span v-else>{{ subTitle }}</span>
       </span>
-      <span v-if="dateString">{{ dateString }}</span>
+
+      <MarkdownString v-if="dateString" :source="`\`${dateString}\``" />
     </div>
 
-    <div v-if="description" class="w-4/6 leading-8">
+    <div v-if="description" class="w-4/6 leading-8 text-justify">
       <span>{{ description }}</span>
     </div>
 
-    <span v-if="link" class="text-sm font-normal">
-      <a :href="link" target="_blank" class="text-blue-400">{{ linkLabel }}</a>
+    <span v-if="link" class="text-base font-normal">
+      <a :href="link" target="_blank" class="text-blue-600 hover:underline">{{ linkLabel }}</a>
     </span>
   </div>
 </template>
