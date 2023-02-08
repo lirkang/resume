@@ -17,7 +17,7 @@ defineProps<Props>();
 
 <template>
   <div class="leading-6 flex flex-col gap-y-2">
-    <div class="font-semibold text-2xl text-gray-900 flex justify-between">
+    <div class="font-semibold text-4xl text-gray-900 flex justify-between">
       <span>{{ name }}</span>
       <SizeSwitcher></SizeSwitcher>
     </div>

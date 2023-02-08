@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "marked": "^4.2.12",
     "pinia": "^2.0.30",
     "reset.css": "^2.0.2",
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@types/marked": "^4.0.8",
     "@types/node": "^18.13.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",

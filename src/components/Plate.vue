@@ -4,11 +4,11 @@ const { title } = defineProps<{ title: string }>();
 
 <template>
   <div class="plate">
-    <div class="py-2 border-b-slate-800 border-b-2 border-solid w-full mb-4">
-      <span class="text-slate-800 font-semibold text-lg">{{ title }}</span>
+    <div class="py-2 border-b-slate-700 border-b-2 text-slate-800 border-solid w-full mb-4">
+      <span class="font-semibold text-xl">{{ title }}</span>
     </div>
 
-    <div class="text-sm text-gray-700">
+    <div class="text-base text-gray-500">
       <slot></slot>
     </div>
   </div>

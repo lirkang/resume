@@ -10,7 +10,7 @@ const asd = listInfo.map(info => <span key={info}>{info}</span>);
 
 <template>
   <div class="text-gray-700 flex items-center">
-    <span> {{ listInfo.join(' | ') }} </span>
+    <span class="text-base"> {{ listInfo.join(' | ') }} </span>
   </div>
 </template>
 
