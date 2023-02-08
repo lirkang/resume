@@ -11,10 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: asd
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: "14"
+
+      - name: Build
+        run: npm i && npm run build
 
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
