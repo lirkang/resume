@@ -40,7 +40,7 @@ const { title, dateString, description, location, subTitle, link, linkLabel = 'é
       <span>{{ description }}</span>
     </div>
 
-    <span v-if="link" class="text-base font-normal">
+    <span v-if="link" class="text-base font-normal italic">
       <a :href="link" target="_blank" class="text-blue-600 hover:underline">{{ linkLabel }}</a>
     </span>
   </div>

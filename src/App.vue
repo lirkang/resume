@@ -6,9 +6,9 @@ import Subplate from '@/components/Subplate.vue';
 </script>
 
 <template>
-  <div style="padding: 10vw" class="overflow-hidden">
-    <div class="bg-gray-800 absolute top-0 left-0 right-0 h-4 transition-all"></div>
+  <div class="bg-gray-800 absolute top-0 left-0 right-0 h-4 transition-all"></div>
 
+  <div style="padding: 10vw" class="overflow-hidden">
     <div class="flex flex-col gap-y-6">
       <Resume
         name="李尔康"
@@ -35,11 +35,9 @@ import Subplate from '@/components/Subplate.vue';
             source="熟练掌握 `HTML`, `CSS`, `JavaScript` 和 `TypeScript` 等前端技术并在实际项目中投入使用。"
           />
           <MarkdownString source="熟悉 `Vue`, `React`, `Angular` 等前端框架和常见的设计模式。" />
-          <MarkdownString source="熟悉 `Flutter`, `react native` 等跨平台应用框架。" />
-          <MarkdownString source="熟练使用第三方库例如 `element-plus` 和 `ant design` 等。" />
-          <MarkdownString
-            source="熟悉 `Node.js` 开发, 熟练使用 `npm`, `webpack`, `gulp` 等工具, 熟悉前端性能的优化。"
-          />
+          <MarkdownString source="熟悉 `Flutter`, `React Native` 等跨平台应用框架。" />
+          <MarkdownString source="熟练使用第三方库例如 `Element Plus` 和 `Ant Design` 等。" />
+          <MarkdownString source="熟悉 `Node` 开发, 熟练使用 `Npm`, `Webpack`, `Gulp` 等工具, 熟悉前端性能的优化。" />
           <MarkdownString source="有良好的代码风格, 注重代码质量。" />
         </div>
       </Plate>
@@ -64,13 +62,13 @@ import Subplate from '@/components/Subplate.vue';
         <div class="flex flex-col gap-y-2">
           <Subplate
             title="爱骑行"
-            sub-title="主要技术: 微信原生小程序 + typescript"
+            sub-title="主要技术: 微信原生小程序 + Typescript"
             description="参与项目从 0 到 1 开发以及接口联调, 设计了项目内的多个功能类: 使用发布订阅模式来管理蓝牙设备与协议栈之间的数据透传, 使用观察者模式管理页面数据, 实现了简单的依赖注入解决循环依赖问题, 使用适配器模式将安卓和IOS设备上蓝牙连接的不同问题统一处理等。"
           />
 
           <Subplate
             title="likan(vscode插件)"
-            sub-title="主要技术: rollup + typescript + lodash"
+            sub-title="主要技术: Rollup + Typescript + Lodash"
             description="从 0 开发整个项目, 实现如下功能: 文件路径查找跳转, 侧边栏显示可定义文件夹的额外资源视图, 批量修改单词格式, 从github服务器下载相应想项目的git忽略文件等。"
             link="https://www.github.com/lirkang/likan"
             link-label="项目地址"

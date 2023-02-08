@@ -11,7 +11,7 @@ const { listInfo = [] } = defineProps<Props>();
 <template>
   <div class="text-gray-700 flex items-center">
     <span class="text-base">
-      <MarkdownString :source="listInfo.join(' | ')" />
+      <MarkdownString :source="listInfo.join('&nbsp;|&nbsp;')" />
     </span>
   </div>
 </template>

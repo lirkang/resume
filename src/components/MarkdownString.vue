@@ -11,7 +11,7 @@ const { source, wrapTag = 'div' } = defineProps<Props>();
 
 <template>
   <component :is="wrapTag">
-    <p v-html="marked(source)"></p>
+    <p v-html="marked(source)" class="text-justify"></p>
   </component>
 </template>
 
