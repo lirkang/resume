@@ -1,16 +1,16 @@
 <script lang="ts" setup name="MarkdownString">
-import marked from '@/store/marked';
+import { marked } from 'marked';
 
 interface Props {
   source: string;
-  wrapTag?: string;
+  wrapTagName?: string;
 }
 
-const { source, wrapTag = 'div' } = defineProps<Props>();
+defineProps<Props>();
 </script>
 
 <template>
-  <component :is="wrapTag">
+  <component :is="wrapTagName ?? 'div'">
     <p v-html="marked(source)" class="text-justify"></p>
   </component>
 </template>

@@ -1,6 +1,5 @@
 <script setup lang="ts" name="Resume">
 import LineInfo from './LineInfo.vue';
-import SizeSwitcher from './SizeSwitcher.vue';
 
 interface Props {
   name: string;
@@ -10,6 +9,7 @@ interface Props {
   gender: string;
   location: string;
   job: string;
+  center?: boolean;
 }
 
 defineProps<Props>();
@@ -17,14 +17,13 @@ defineProps<Props>();
 
 <template>
   <div class="leading-6 flex flex-col gap-y-2">
-    <div class="font-semibold text-4xl text-gray-900 flex justify-between">
+    <div :class="['font-semibold text-4xl text-gray-900 flex', { 'justify-center': center }]">
       <span>{{ name }}</span>
-      <SizeSwitcher></SizeSwitcher>
     </div>
 
-    <LineInfo :list-info="[phone, email]"></LineInfo>
-    <LineInfo :list-info="[age, gender]"></LineInfo>
-    <LineInfo :list-info="[location, job]"></LineInfo>
+    <LineInfo :center="center ?? false" :list-info="[phone, email]"></LineInfo>
+    <LineInfo :center="center ?? false" :list-info="[age, gender]"></LineInfo>
+    <LineInfo :center="center ?? false" :list-info="[location, job]"></LineInfo>
   </div>
 </template>
 

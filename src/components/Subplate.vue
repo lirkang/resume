@@ -1,5 +1,6 @@
 <script setup lang="ts" name="Subplate">
 import MarkdownString from '@/components/MarkdownString.vue';
+import { Link, Local, Time } from '@icon-park/vue-next';
 
 interface Props {
   title?: string;
@@ -11,7 +12,7 @@ interface Props {
   linkLabel?: string;
 }
 
-const { title, dateString, description, location, subTitle, link, linkLabel = 'é“¾æŽ¥' } = defineProps<Props>();
+defineProps<Props>();
 </script>
 
 <template>
@@ -21,10 +22,13 @@ const { title, dateString, description, location, subTitle, link, linkLabel = 'é
         <span>{{ title }} </span>
       </span>
 
-      <span v-if="location"> {{ location }} </span>
+      <div v-if="location" class="flex items-center gap-x-2">
+        <Local />
+        <span> {{ location }} </span>
+      </div>
     </div>
 
-    <div class="flex justify-between" v-if="subTitle || dateString">
+    <div class="flex justify-between items-start" v-if="subTitle || dateString">
       <span class="text-gray-600 leading-8" v-if="subTitle">
         <template v-if="Array.isArray(subTitle)">
           <MarkdownString v-for="title of subTitle" :key="title" :source="title" />
@@ -33,15 +37,21 @@ const { title, dateString, description, location, subTitle, link, linkLabel = 'é
         <span v-else>{{ subTitle }}</span>
       </span>
 
-      <MarkdownString v-if="dateString" :source="`\`${dateString}\``" />
+      <div v-if="dateString" class="flex items-center gap-x-2">
+        <Time />
+        <MarkdownString :source="`\`${dateString}\``" />
+      </div>
     </div>
 
-    <div v-if="description" class="w-4/6 leading-8 text-justify">
+    <div v-if="description" class="w-5/6 leading-8 text-justify">
       <span>{{ description }}</span>
     </div>
 
     <span v-if="link" class="text-base font-normal italic">
-      <a :href="link" target="_blank" class="text-blue-600 hover:underline">{{ linkLabel }}</a>
+      <a :href="link" target="_blank" class="text-blue-600 flex items-center">
+        <Link />
+        <span>{{ linkLabel }} </span>
+      </a>
     </span>
   </div>
 </template>
